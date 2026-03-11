@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Search Library</title>
+  <link rel="stylesheet" href="manager.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="masthead">
+      <div>
+        <p class="eyebrow">Search archive</p>
+        <h1>AI Search Library</h1>
+        <p class="lede">Manage saved Google AI searches with filtering, export/import, and fast folder cleanup.</p>
+      </div>
+      <div class="masthead-actions">
+        <button id="new-folder-btn">New Folder</button>
+        <button id="export-btn" class="ghost">Export JSON</button>
+        <label class="import-btn ghost" for="import-input">Import JSON</label>
+        <input id="import-input" type="file" accept="application/json" hidden />
+      </div>
+    </section>
+
+    <section class="toolbar">
+      <input id="search-input" type="search" placeholder="Search folders, titles, queries, summaries" />
+      <select id="folder-filter">
+        <option value="all">All folders</option>
+      </select>
+      <select id="type-filter">
+        <option value="all">All pages</option>
+        <option value="ai">AI captures</option>
+        <option value="standard">Standard search</option>
+      </select>
+    </section>
+
+    <section class="dashboard">
+      <div class="metric"><span id="folders-count" class="metric-value">0</span><span class="metric-label">Folders</span></div>
+      <div class="metric"><span id="entries-count" class="metric-value">0</span><span class="metric-label">Entries</span></div>
+      <div class="metric"><span id="ai-count" class="metric-value">0</span><span class="metric-label">AI captures</span></div>
+    </section>
+
+    <section id="empty-state" class="empty hidden">
+      <h2>No saved searches match this view.</h2>
+      <p>Change the filters, create a folder, or save more Google AI pages from the popup.</p>
+    </section>
+
+    <section id="results" class="results"></section>
+  </main>
+
+  <template id="folder-template">
+    <article class="folder-card">
+      <header class="folder-head">
+        <div>
+          <p class="folder-kicker"></p>
+          <h2 class="folder-title"></h2>
+        </div>
+        <div class="folder-actions">
+          <button class="rename-folder ghost">Rename</button>
+          <button class="delete-folder danger">Delete</button>
+        </div>
+      </header>
+      <div class="entries"></div>
+    </article>
+  </template>
+
+  <template id="entry-template">
+    <article class="entry-card">
+      <div class="entry-main">
+        <p class="entry-badge"></p>
+        <a class="entry-title" target="_blank" rel="noopener noreferrer"></a>
+        <p class="entry-query"></p>
+        <p class="entry-summary"></p>
+        <p class="entry-meta"></p>
+      </div>
+      <div class="entry-actions">
+        <select class="move-entry"></select>
+        <button class="copy-link ghost">Copy Link</button>
+        <button class="delete-entry ghost">Remove</button>
+      </div>
+    </article>
+  </template>
+
+  <script type="module" src="manager.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Search Folders</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Google AI Organizer</p>
+        <h1>AI Search Folders</h1>
+      </div>
+      <div class="hero-actions">
+        <button id="open-library-btn" class="ghost">Open Library</button>
+        <button id="new-folder-btn" title="Create folder">+ Folder</button>
+      </div>
+    </header>
+
+    <section class="current-card">
+      <div class="current-copy">
+        <p class="section-label">Current page</p>
+        <h2 id="current-title">Open a Google AI result</h2>
+        <p id="current-query" class="current-query">No query detected yet.</p>
+      </div>
+      <p id="current-meta" class="status"></p>
+    </section>
+
+    <section id="new-folder-panel" class="panel hidden">
+      <input id="new-folder-input" type="text" placeholder="Folder name" maxlength="60" />
+      <div class="panel-actions">
+        <button id="create-folder-btn">Create</button>
+        <button id="cancel-folder-btn" class="ghost">Cancel</button>
+      </div>
+    </section>
+
+    <section class="save-row">
+      <label for="folder-select">Save current Google search to:</label>
+      <div class="save-controls">
+        <select id="folder-select"></select>
+        <button id="save-current-btn">Save Tab</button>
+      </div>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="stats-grid" id="stats-grid"></section>
+
+    <section>
+      <ul id="folder-list" class="folder-list"></ul>
+    </section>
+  </main>
+
+  <template id="folder-template">
+    <li class="folder-item">
+      <details>
+        <summary>
+          <span class="folder-name"></span>
+          <span class="folder-count"></span>
+        </summary>
+        <div class="folder-actions">
+          <button class="rename-folder ghost">Rename</button>
+          <button class="delete-folder danger">Delete</button>
+        </div>
+        <ul class="entry-list"></ul>
+      </details>
+    </li>
+  </template>
+
+  <template id="entry-template">
+    <li class="entry-item">
+      <div class="entry-copy">
+        <a class="entry-link" target="_blank" rel="noopener noreferrer"></a>
+        <p class="entry-meta"></p>
+      </div>
+      <div class="entry-actions">
+        <button class="copy-link ghost">Copy</button>
+        <button class="delete-entry ghost">Remove</button>
+      </div>
+    </li>
+  </template>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
