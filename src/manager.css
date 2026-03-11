@@ -1,15 +1,14 @@
 :root {
   color-scheme: light;
-  --bg: #f2efe8;
-  --surface: rgba(255, 251, 246, 0.92);
-  --surface-strong: #fffefb;
-  --border: rgba(58, 43, 26, 0.12);
-  --text: #1f1a17;
-  --muted: #6e645b;
-  --accent: #0f6a5c;
-  --accent-2: #d46027;
-  --danger: #a22a2a;
-  --shadow: 0 24px 60px rgba(84, 66, 44, 0.12);
+  --bg: #f6f8fc;
+  --surface: #ffffff;
+  --surface-strong: #f8fbff;
+  --border: #d7e0ef;
+  --text: #10233f;
+  --muted: #687b98;
+  --accent: #2f6fec;
+  --danger: #7d8da8;
+  --shadow: 0 12px 32px rgba(15, 35, 63, 0.05);
 }
 
 * {
@@ -18,40 +17,37 @@
 
 body {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(circle at top left, rgba(212, 96, 39, 0.18), transparent 26%),
-    radial-gradient(circle at top right, rgba(15, 106, 92, 0.12), transparent 20%),
-    linear-gradient(180deg, #fbf7ef 0%, var(--bg) 100%);
+  background: var(--bg);
 }
 
 button,
 input,
 select,
 .import-btn {
-  font: 600 14px/1.2 "Segoe UI", Tahoma, sans-serif;
+  font: 600 14px/1.2 inherit;
 }
 
 button,
 .import-btn {
   border: 1px solid var(--border);
-  border-radius: 999px;
+  border-radius: 12px;
   background: var(--surface-strong);
   color: var(--text);
   padding: 10px 14px;
   cursor: pointer;
-  transition: transform 120ms ease, border-color 120ms ease;
+  transition: transform 120ms ease, border-color 120ms ease, background-color 120ms ease;
 }
 
 button:hover,
 .import-btn:hover {
   transform: translateY(-1px);
-  border-color: rgba(15, 106, 92, 0.4);
+  border-color: #b8c8e3;
 }
 
 .ghost {
-  background: transparent;
+  background: #fff;
 }
 
 .danger {
@@ -62,18 +58,18 @@ input,
 select {
   width: 100%;
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 12px;
   padding: 12px 14px;
   background: var(--surface-strong);
   color: var(--text);
 }
 
 .shell {
-  max-width: 1180px;
+  max-width: 1080px;
   margin: 0 auto;
-  padding: 32px 20px 60px;
+  padding: 28px 20px 56px;
   display: grid;
-  gap: 18px;
+  gap: 14px;
 }
 
 .masthead,
@@ -83,15 +79,15 @@ select {
 .empty {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 24px;
+  border-radius: 20px;
   box-shadow: var(--shadow);
 }
 
 .masthead {
-  padding: 24px;
+  padding: 22px;
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 18px;
   align-items: flex-start;
 }
 
@@ -99,7 +95,7 @@ select {
 .folder-kicker,
 .entry-badge {
   margin: 0 0 8px;
-  font: 700 11px/1.2 "Segoe UI", Tahoma, sans-serif;
+  font: 700 11px/1.2 "SFMono-Regular", "SF Mono", Menlo, Monaco, Consolas, monospace;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
@@ -110,82 +106,86 @@ select {
 .entry-query,
 .entry-summary,
 .entry-meta {
-  font-family: "Segoe UI", Tahoma, sans-serif;
+  font-family: inherit;
 }
 
 h1 {
   margin: 0 0 8px;
-  font-size: clamp(34px, 6vw, 58px);
-  line-height: 0.95;
+  font-size: clamp(28px, 5vw, 44px);
+  line-height: 1;
+  letter-spacing: -0.03em;
 }
 
 h2 {
   margin: 0;
-  font-size: 28px;
+  font-size: 22px;
+  letter-spacing: -0.02em;
 }
 
 .lede {
   margin: 0;
-  max-width: 60ch;
+  max-width: 54ch;
   color: var(--muted);
+  line-height: 1.5;
 }
 
 .masthead-actions {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
 
 .toolbar {
-  padding: 16px;
+  padding: 14px;
   display: grid;
   grid-template-columns: minmax(240px, 1.8fr) 1fr 1fr;
-  gap: 12px;
+  gap: 10px;
 }
 
 .dashboard {
-  padding: 16px;
+  padding: 12px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 10px;
 }
 
 .metric {
-  background: rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(58, 43, 26, 0.08);
-  border-radius: 18px;
-  padding: 16px;
+  background: #fbfcfe;
+  border: 1px solid #e7edf6;
+  border-radius: 16px;
+  padding: 14px;
 }
 
 .metric-value {
   display: block;
-  font-size: 36px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 4px;
 }
 
 .metric-label {
-  font: 600 12px/1.2 "Segoe UI", Tahoma, sans-serif;
+  font: 600 11px/1.2 "SFMono-Regular", "SF Mono", Menlo, Monaco, Consolas, monospace;
   color: var(--muted);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
 }
 
 .results {
   display: grid;
-  gap: 16px;
+  gap: 12px;
 }
 
 .folder-card {
-  padding: 18px;
+  padding: 16px;
 }
 
 .folder-head {
   display: flex;
   justify-content: space-between;
-  gap: 16px;
+  gap: 14px;
   align-items: flex-start;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .folder-actions,
@@ -197,21 +197,22 @@ h2 {
 
 .entries {
   display: grid;
-  gap: 12px;
+  gap: 10px;
 }
 
 .entry-card {
-  border-top: 1px solid rgba(58, 43, 26, 0.1);
+  border-top: 1px solid #edf2f9;
   padding-top: 12px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: 16px;
+  gap: 14px;
 }
 
 .entry-title {
   color: var(--accent);
-  font-size: 22px;
+  font-size: 18px;
   text-decoration: none;
+  font-weight: 600;
 }
 
 .entry-query,
@@ -219,6 +220,7 @@ h2 {
 .entry-meta {
   margin: 6px 0 0;
   color: var(--muted);
+  line-height: 1.45;
 }
 
 .entry-summary:empty,
@@ -227,7 +229,7 @@ h2 {
 }
 
 .empty {
-  padding: 36px 20px;
+  padding: 32px 20px;
   text-align: center;
 }
 

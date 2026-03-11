@@ -1,7 +1,9 @@
 const STORAGE_KEY = "aiSearchFolders";
 const MANAGER_URL = chrome.runtime.getURL("src/manager.html");
+const GOOGLE_AI_SEARCH_URL = "https://www.google.com/search?udm=50";
 
 const els = {
+  openGoogleAiBtn: document.getElementById("open-google-ai-btn"),
   openLibraryBtn: document.getElementById("open-library-btn"),
   newFolderBtn: document.getElementById("new-folder-btn"),
   newFolderPanel: document.getElementById("new-folder-panel"),
@@ -35,6 +37,10 @@ async function init() {
 }
 
 function wireEvents() {
+  els.openGoogleAiBtn.addEventListener("click", async () => {
+    await chrome.tabs.create({ url: GOOGLE_AI_SEARCH_URL });
+  });
+
   els.openLibraryBtn.addEventListener("click", async () => {
     await chrome.tabs.create({ url: MANAGER_URL });
   });
