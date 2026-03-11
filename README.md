@@ -12,11 +12,29 @@ A lightweight extension to organize Google AI/search pages into folders, like ch
 - Export and import your saved folders as JSON.
 - Data is stored in `chrome.storage.local`.
 
-## Install (Developer Mode)
+## Installation
+This extension does not require a build step or package installation.
+
+### 1. Get the code
+Clone the repository:
+
+```bash
+git clone https://github.com/Erdna883/Google-AI-Search-Folders.git
+cd Google-AI-Search-Folders
+```
+
+Or download the project as a ZIP and extract it locally.
+
+### 2. Load the extension in Chrome
 1. Open `chrome://extensions`.
 2. Enable **Developer mode**.
 3. Click **Load unpacked**.
-4. Select this project folder.
+4. Select the `Google-AI-Search-Folders` project folder.
+
+### 3. Start using it
+1. Open a Google search or Google AI results page.
+2. Click the extension icon.
+3. Create a folder and save the current page.
 
 ## Notes
 - The extension currently saves Google pages (`google.com` / `www.google.com`) with search-like URLs.
