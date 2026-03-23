@@ -3,7 +3,7 @@
   "name": "Google AI Search Folders",
   "description": "Organize Google AI searches into folders with richer capture and a full library view.",
   "version": "0.2.0",
-  "permissions": ["storage", "tabs"],
+  "permissions": ["activeTab", "scripting", "storage", "tabs"],
   "host_permissions": [
     "https://www.google.com/*",
     "https://google.com/*"
